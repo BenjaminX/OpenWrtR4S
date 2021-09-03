@@ -21,12 +21,12 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lea
 echo '###  ###'
 
 echo '### 添加 R4S GPU 驱动 ###'
-rm -rf /package/kernel/linux/modules/video.mk
+rm -rf package/kernel/linux/modules/video.mk
 wget -P package/kernel/linux/modules/ https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/package/kernel/linux/modules/video.mk
 echo '###  ###'
 
 echo '### 使用特定的优化 ###'
 sed -i 's,-mcpu=generic,-mcpu=cortex-a72.cortex-a53+crypto,g' include/target.mk
-cp -f ../../PATCH/mbedtls/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch ./package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
+cp -f /PATCH/mbedtls/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch package/libs/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch
 sed -i 's,kmod-r8169,kmod-r8168,g' target/linux/rockchip/image/armv8.mk
 echo '###  ###'
