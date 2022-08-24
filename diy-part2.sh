@@ -15,6 +15,11 @@ echo '### Updates default IP gate ###'
 sed -i 's/192.168.1.1/10.1.1.10/g' package/base-files/files/bin/config_generate
 echo '###  ###'
 
+# Modify kernel version
+echo '### Updates kernel version ###'
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/x86/Makefile
+echo '###  ###'
+
 # echo '### Updates Theme Argon ###'
 # package/lean/luci-theme-argon /package/feeds/luci/luci-theme-argon
 rm -rf package/feeds/luci/luci-theme-argon
