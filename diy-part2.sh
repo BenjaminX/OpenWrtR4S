@@ -17,8 +17,8 @@ echo '###  ###'
 
 # Modify kernel version
 echo '### Updates kernel version ###'
-sed -i 's/KERNEL_PATCHVER=5.19/KERNEL_PATCHVER=5.15/g' target/linux/x86/Makefile
-sed -i 's/KERNEL_TESTING_PATCHVER=5.4/KERNEL_TESTING_PATCHVER=5.19/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER=5.19/KERNEL_PATCHVER=5.15/g' target/linux/rockchip/Makefile
+sed -i 's/KERNEL_TESTING_PATCHVER=5.4/KERNEL_TESTING_PATCHVER=5.19/g' target/linux/rockchip/Makefile
 echo '###  ###'
 
 # echo '### Updates Theme Argon ###'
