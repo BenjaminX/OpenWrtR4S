@@ -17,7 +17,7 @@ echo '###  ###'
 
 # Modify kernel version
 echo '### Updates kernel version ###'
-sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' target/linux/x86/Makefile
 echo '###  ###'
 
 # echo '### Updates Theme Argon ###'
