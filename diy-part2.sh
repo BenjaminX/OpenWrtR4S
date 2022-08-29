@@ -16,10 +16,10 @@ sed -i 's/192.168.1.1/10.1.1.10/g' package/base-files/files/bin/config_generate
 echo '###  ###'
 
 # Modify kernel version
-echo '### Updates kernel version ###'
-sed -i 's/KERNEL_PATCHVER=5.19/KERNEL_PATCHVER=5.15/g' target/linux/rockchip/Makefile
-sed -i 's/KERNEL_TESTING_PATCHVER=5.4/KERNEL_TESTING_PATCHVER=5.19/g' target/linux/rockchip/Makefile
-echo '###  ###'
+# echo '### Updates kernel version ###'
+# sed -i 's/KERNEL_PATCHVER=5.19/KERNEL_PATCHVER=5.15/g' target/linux/rockchip/Makefile
+# sed -i 's/KERNEL_TESTING_PATCHVER=5.4/KERNEL_TESTING_PATCHVER=5.19/g' target/linux/rockchip/Makefile
+# echo '###  ###'
 
 # echo '### Updates Theme Argon ###'
 # package/lean/luci-theme-argon /package/feeds/luci/luci-theme-argon
