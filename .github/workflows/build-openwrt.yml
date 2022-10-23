@@ -46,9 +46,9 @@ jobs:
           remove-dotnet: 'true'
           
     - name: Checkout
-      uses: actions/checkout@v2.4.0  
+      uses: actions/checkout@v2
       
-    - name: Build
+    - name: Free space
       run: |
           echo "Free space:"
           df -h
