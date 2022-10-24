@@ -44,6 +44,8 @@ jobs:
           root-reserve-mb: 1024
           swap-size-mb: 2048
           remove-dotnet: 'true'
+          node-version: 16
+          cache: 'npm'
           
     - name: Checkout
       uses: actions/checkout@v2.4.0
