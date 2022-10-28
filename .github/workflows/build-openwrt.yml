@@ -37,24 +37,10 @@ jobs:
   build:
     runs-on: ubuntu-20.04
 
-    steps:
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@master
-      with:
-          root-reserve-mb: 1024
-          swap-size-mb: 2048
-          remove-dotnet: 'true'
-          node-version: 16
-          cache: 'npm'
-          
+  steps:
     - name: Checkout
-      uses: actions/checkout@v2
-      
-    - name: Free space
-      run: |
-          echo "Free space:"
-          df -h
-          
+      uses: actions/checkout@v2.4.0  
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
