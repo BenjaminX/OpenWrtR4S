@@ -34,17 +34,13 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-  runs-on: ubuntu-20.04
-  
-  steps:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
     - name: Checkout
       uses: actions/checkout@v2.4.0  
       
-    - name: Build
-      run: |
-          echo "Free space:"
-          df -h
-
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -71,6 +67,7 @@ jobs:
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
+        # git checkout cabbef2b4e4618e8acd4f0819642b1e6d5e7e1ae
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
@@ -189,7 +186,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 4
+        keep_latest: 3
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
